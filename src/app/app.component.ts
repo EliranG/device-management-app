@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'device-management-app';
+  title = 'Device Management App';
+  subTitle = 'Real time management & monitoring';
 }

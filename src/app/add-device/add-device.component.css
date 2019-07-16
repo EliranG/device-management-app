@@ -1,0 +1,90 @@
+/* 'Open Sans' font from Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+
+.device {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+.device-header,
+.device p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.device-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: rgb(15, 66, 107);
+}
+
+.device-header {
+  background: rgb(12, 77, 129);
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+
+
+.device p {
+  padding: 12px;
+}
+
+.device input {
+  box-sizing: border-box;
+  display: block;
+  
+  border-width: 1px;
+  border-style: solid;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+
+
+
+.device input[type="name"],
+.device input[type="ip"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+.device input[type="name"]:focus,
+.device input[type="ip"]:focus {
+  border-color: #888;
+}
+
+.device input[type="submit"] {
+  background: rgb(1, 29, 51);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.device input[type="submit"]:hover {
+  background: #17c;
+}
+
+.device input[type="submit"]:focus {
+  border-color: #05a;
+}
+
+.has-error input[type="text"] {
+    border-color: rgb(216, 12, 12);
+    color: rgb(230, 14, 14);
+}
+
+.errorText {
+  color: rgb(230, 14, 14);
+  font-size: 12px;
+}

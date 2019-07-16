@@ -1,0 +1,52 @@
+
+<div class="device">
+    <h5 class="center">Add new device</h5>
+    <form name ="deviceForm" [formGroup]="deviceForm" class="device-container" (ngSubmit)="addDevice()">
+    
+      <!-- device name input-->
+    <p [ngClass]="{ 'has-error': isSubmitted && deviceControls.name.errors }">
+      <input type="text" placeholder="name" formControlName="name">
+    </p>
+
+    <div *ngIf="isSubmitted && deviceControls.name.errors" class="help-block">
+      <div *ngIf="deviceControls.name.errors.required" class="errorText">Device name is required</div>
+      <div *ngIf="!deviceControls.name.errors.maxLength" class="errorText">Only 10 characters allowed.</div>
+    </div>
+   
+    <!-- IP input-->
+    <p [ngClass]="{ 'has-error': isSubmitted && deviceControls.ip.errors }">
+      <input type="text" placeholder="0.0.0.0" formControlName="ip">
+    </p>
+
+    <div *ngIf="isSubmitted && deviceControls.ip.errors" class="help-block">
+      <div *ngIf="deviceControls.ip.errors.required" class="errorText">IP is required</div>
+      <div *ngIf="deviceControls.ip.errors.pattern" class="errorText">Only valid IP address allowed</div>
+    </div>
+
+     <!-- type input-->
+     <p>
+        <select placeholder="type" formControlName="type" [ngClass]="{ 'has-error': isSubmitted && deviceControls.ip.errors }">
+            <option value="" disabled selected>type</option>
+            <option *ngFor="let type of deviceTypes" >
+                  {{type}}
+            </option>
+          </select>
+      </p>
+  
+      <div *ngIf="isSubmitted && deviceControls.ip.errors" class="help-block">
+        <div *ngIf="deviceControls.ip.errors.required" class="errorText">type is required</div>
+      </div>
+
+     
+
+    <p>
+      <input class="btn btn-secondary" type="submit" value="Add device">
+    </p>
+  </form>
+  <p>
+      <ngb-alert [dismissible]="false" [type]="success" [hidden]="!successAlert" class="alert-success" >Device successfully addded!</ngb-alert>
+    </p>
+</div>
+
+<button type="button" class="btn btn-secondary" (click)="goBack()">go back</button>
+
